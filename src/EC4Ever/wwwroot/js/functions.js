@@ -55,28 +55,6 @@ function startHeartAnimation() {
     }, interval);
 }
 
-(function ($) {
-    $.fn.typewriter = function () {
-        this.each(function () {
-            var $ele = $(this), str = $ele.html(), progress = 0;
-            $ele.html('');
-            var timer = setInterval(function () {
-                var current = str.substr(progress, 1);
-                if (current == '<') {
-                    progress = str.indexOf('>', progress) + 1;
-                } else {
-                    progress++;
-                }
-                $ele.html(str.substring(0, progress) + (progress & 1 ? '<strong>|</strong>' : ''));
-                if (progress >= str.length) {
-                    clearInterval(timer);
-                }
-            }, 40);
-        });
-        return this;
-    };
-})(jQuery);
-
 function timeElapse(date) {
     var current = Date();
     var seconds = (Date.parse(current) - Date.parse(date)) / 1000;
@@ -96,13 +74,13 @@ function timeElapse(date) {
         seconds = "0" + seconds;
     }
     var result = "<span class=\"digit\">" + days + "</span>" +
-                 "<span class=\"hidden-xs\"> days </span><span class=\"visible-xs\"> D </span>" +
+                 "<span class=\"d-none d-sm-inline\"> days </span><span class=\"d-inline d-sm-none\"> D </span>" +
                  "<span class=\"digit\">" + hours + "</span>" +
-                 "<span class=\"hidden-xs\"> hours </span><span class=\"visible-xs\"> H </span>" +
+                 "<span class=\"d-none d-sm-inline\"> hours </span><span class=\"d-inline d-sm-none\"> H </span>" +
                  "<span class=\"digit\">" + minutes + "</span>" +
-                 "<span class=\"hidden-xs\"> minutes </span><span class=\"visible-xs\"> m </span>" +
+                 "<span class=\"d-none d-sm-inline\"> minutes </span><span class=\"d-inline d-sm-none\"> m </span>" +
                  "<span class=\"digit\">" + seconds + "</span>" +
-                 "<span class=\"hidden-xs\"> seconds </span><span class=\"visible-xs\"> s </span>";
+                 "<span class=\"d-none d-sm-inline\"> seconds </span><span class=\"d-inline d-sm-none\"> s </span>";
 
     $("#elapseClock").html(result);
 }
