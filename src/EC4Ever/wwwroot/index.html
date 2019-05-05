@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Edi ❤ Chelsea</title>
+    <title>EC ❤ 4EVER</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
@@ -21,13 +21,11 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="~/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/css/site.min.css?v=UEXYX7WnGoPLhYl2i34V5RsVNOBOn_QdojxlkMyB2aE" />
-    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js" crossorigin="anonymous" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"></script>
-    <script src="/js/site.min.js?v=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU"></script>
-    <script src="/js/garden.min.js"></script>
-    <script src="/js/functions.min.js"></script>
+    <link href="lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/site.min.css" />
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/twitter-bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/bundle.min.js"></script>
 </head>
 <body>
     <div>
@@ -44,8 +42,8 @@
                     <canvas id="garden"></canvas>
                     <div id="words">
                         <div id="messages">
-                            <span class="hidden-xs">Dear 💕 We've been together for</span>
-                            <span class="visible-xs">We've been together for</span>
+                            <span class="d-none d-sm-inline">💕</span>
+                            <span>Together for</span>
                             <div id="elapseClock"></div>
                         </div>
                     </div>
@@ -75,7 +73,7 @@
             timeElapse(together);
             setInterval(function () {
                 timeElapse(together);
-            }, 1000);
+            }, 800);
         }
     </script>
 </body>
