@@ -30,6 +30,7 @@ function getHeartPoint(angle) {
 function startHeartAnimation() {
     var interval = 50;
     var angle = 10;
+    var tick = 0;
     var heart = new Array();
     var animationTimer = setInterval(function () {
         var bloom = getHeartPoint(angle);
@@ -43,8 +44,11 @@ function startHeartAnimation() {
             }
         }
         if (draw) {
+            ++tick;
             heart.push(bloom);
-            garden.createRandomBloom(bloom[0], bloom[1]);
+            if (tick > 2) {
+                garden.createRandomBloom(bloom[0], bloom[1]);
+            }
         }
         if (angle >= 30) {
             clearInterval(animationTimer);
@@ -74,13 +78,13 @@ function timeElapse(date) {
         seconds = "0" + seconds;
     }
     var result = "<span class=\"digit\">" + days + "</span>" +
-                 "<span class=\"d-none d-sm-inline\"> days </span><span class=\"d-inline d-sm-none\"> D </span>" +
-                 "<span class=\"digit\">" + hours + "</span>" +
-                 "<span class=\"d-none d-sm-inline\"> hours </span><span class=\"d-inline d-sm-none\"> H </span>" +
-                 "<span class=\"digit\">" + minutes + "</span>" +
-                 "<span class=\"d-none d-sm-inline\"> minutes </span><span class=\"d-inline d-sm-none\"> m </span>" +
-                 "<span class=\"digit\">" + seconds + "</span>" +
-                 "<span class=\"d-none d-sm-inline\"> seconds </span><span class=\"d-inline d-sm-none\"> s </span>";
+        "<span class=\"d-none d-sm-inline\"> days </span><span class=\"d-inline d-sm-none\"> D </span>" +
+        "<span class=\"digit\">" + hours + "</span>" +
+        "<span class=\"d-none d-sm-inline\"> hours </span><span class=\"d-inline d-sm-none\"> H </span>" +
+        "<span class=\"digit\">" + minutes + "</span>" +
+        "<span class=\"d-none d-sm-inline\"> minutes </span><span class=\"d-inline d-sm-none\"> m </span>" +
+        "<span class=\"digit\">" + seconds + "</span>" +
+        "<span class=\"d-none d-sm-inline\"> seconds </span><span class=\"d-inline d-sm-none\"> s </span>";
 
     $("#elapseClock").html(result);
 }
